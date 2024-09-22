@@ -1,0 +1,2 @@
+Required Python packages Mardown2,
+Reuqired Python packages django, 

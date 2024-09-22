@@ -1,0 +1,16 @@
+{% extends 'finance/layout.html' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center">Kategorie</h1>
+    <hr>
+    <div class="categories-list">
+        {% for code, name in categories.items %}
+            <div class="category-item mb-3">
+                <a href="{% url 'category' post_category=code %}" class="btn btn-primary btn-block">{{ name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

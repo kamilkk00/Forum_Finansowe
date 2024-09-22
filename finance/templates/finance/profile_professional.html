@@ -1,0 +1,43 @@
+{% extends 'finance/layout.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Konto Profesjonalisty</h1>
+    {% if profile %}
+        <div class="profile-details p-4 mb-4 border rounded shadow-sm bg-white">
+            <h2 class="text-center">{{ profile.user.username }}</h2>
+            <p class="text-center">{{ profile.description }}</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Nazwa firmy:</strong> {{ profile.company_name }}</li>
+                <li class="list-group-item"><strong>Miasto:</strong> {{ profile.city }}</li>
+                <li class="list-group-item"><strong>Specjalizacja:</strong> {{ profile.specialization }}</li>
+                <li class="list-group-item"><strong>Stawka godzinowa:</strong> {{ profile.hourly_rate }}</li>
+                <li class="list-group-item"><strong>Dostępność:</strong> {{ profile.availability }}</li>
+                <li class="list-group-item"><strong>E-mail:</strong> <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></li>
+                <li class="list-group-item"><strong>Strona internetowa:</strong> <a href="{{ profile.website }}" target="_blank">{{ profile.website }}</a></li>
+                <li class="list-group-item"><strong>Media społecznościowe:</strong> <a href="{{ profile.social_media }}" target="_blank">{{ profile.social_media }}</a></li>
+                <li class="list-group-item"><strong>Lata doświadczenia:</strong> {{ profile.years_of_experience }}</li>
+                <li class="list-group-item"><strong>Certyfikaty:</strong> {{ profile.certifications }}</li>
+            </ul>
+            {% if profile.user.username != user.username %}
+                <div class="text-center mt-3 mb-3">
+                    <a href="{% url 'add_opinion' profile.user.username %}" class="btn btn-primary">Dodaj opinię</a>
+                </div>
+            {% endif %}
+            {% if reviews %}
+                <h3 class="text-center mt-4">Recenzje</h3>
+                <div class="reviews-section">
+                    {% for review in reviews %}
+                        <div class="review p-3 mb-3 border rounded bg-light">
+                            <p>{{ review.opinion }}</p>
+                            <p><strong>Ocena:</strong> {{ review.value }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% else %}
+        <p class="text-center">Ten użytkownik nie ma jeszcze profilu profesjonalisty.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'finance/layout.html' %}
+
+{% block body %}
+<div class="search-results container mt-5">
+    <h2 class="text-center mb-4">Wyniki wyszukiwania</h2>
+    <p class="text-center"><strong>Zapytanie:</strong> {{ query }}</p>
+    {% if posts %}
+        <div class="posts-list">
+            {% for post in posts %}
+                <div class="post p-4 mb-4 border rounded shadow-sm bg-light">
+                    <h2><a href="{% url 'post_page' post.id %}" class="post-title">{{ post.temat }}</a></h2>
+                    <p>Autor: <a href="{% url 'profile' post.user.username %}" class="post-author">{{ post.user.username }}</a></p>
+                    <p>Kategoria: <span class="post-category"><a href="{% url 'category' post_category=post.category %}">{{ post.get_category_display }}</a></span></p>
+                    <p>Polubienia: <span class="post-likes">{{ post.like_count }}</span></p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">Nie znaleziono postów. <a href="{% url 'create' %}">Stwórz nowy artykuł tutaj</a></p>
+    {% endif %}
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1">&laquo; pierwsza</a>
+            <a href="?page={{ posts.previous_page_number }}">poprzednia</a>
+        {% endif %}
+
+        <span class="current">
+            Strona {{ posts.number }} z {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">następna</a>
+            <a href="?page={{ posts.paginator.num_pages }}">ostatnia &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

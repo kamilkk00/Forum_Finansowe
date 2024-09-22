@@ -1,0 +1,31 @@
+{% extends "finance/layout.html" %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center">Create New Article</h1>
+    <hr>
+    {% if message %}
+        <div class="alert alert-success text-center">{{ message }}</div>
+    {% endif %}
+    <form action="{% url 'create' %}" method="POST" class="create-post-form mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" class="form-control" placeholder="Content" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category" class="form-control" required>
+                {% for code, name in categories.items %}
+                    <option value="{{code}}">{{name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Add Post</button>
+    </form>
+</div>
+{% endblock %}
