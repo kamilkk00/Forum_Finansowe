@@ -25,15 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8p_b@_xl7v!zvp$(8_!u6x8ehtmqr%bpx5)j3d6t#u0bwgp+a@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'FALSE') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['forum-finansowe.herokuapp.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'markdown_deux',
+    'django_markdown_deux',
     'finance',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middlerware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'final_project.urls'
