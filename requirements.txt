@@ -1,2 +1,3 @@
-Required Python packages Mardown2,
-Reuqired Python packages django, 
+gunicorn==23.0.0
+packaging==24.1
+psycopg2-binary==2.9.9
