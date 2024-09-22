@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8p_b@_xl7v!zvp$(8_!u6x8ehtmqr%bpx5)j3d6t#u0bwgp+a@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'FALSE') == 'True'
 
-ALLOWED_HOSTS = ['forum-finansowe.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['forum-finansowe-aa65ab19d26c.herokuapp.com', 'localhost']
 
 
 # Application definition
