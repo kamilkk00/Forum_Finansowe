@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['forum-finansowe.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'django_markdown_deux',
+    'djang_markdown_deux',
     'finance',
     'django.contrib.admin',
     'django.contrib.auth',
