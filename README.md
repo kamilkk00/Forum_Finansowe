@@ -1,6 +1,6 @@
 # Forum Finansowe
 
-### English version below
+## Link do aplikacji: [forum_finansowe](https://www.biznesiwiedza.pl)
 
 Forum finansowe zostało zaprojektowane z myślą o dzieleniu się wiedzą pomiędzy doświadczonymi osobami lub specjalistami w swoich dziedzinach (takich jak doradcy podatkowi, księgowi i inni).
 
@@ -34,40 +34,3 @@ Profesjonalne profile pozwalają na dodawanie opinii i ocen (od 1 do 5) przez u�
 
 ## Zgłaszanie błędów
 Jeśli znajdziesz jakiekolwiek błędy lub masz propozycje ulepszeń, zgłoś je za pomocą [GitHub Issues].
-
----
-
-# Financial Forum
-
-This online forum was designed with the idea of sharing knowledge between experienced individuals or specialists in their respective fields (such as tax advisors, accountants, and others).
-
-The Financial Forum is a web application based on the Django framework.  
-The forum serves two types of users:  
-The first group consists of individuals seeking knowledge in specific areas related to running a business. These users can find articles of interest to them and view profiles of the authors to get additional information such as a website or phone number, allowing them to contact an expert.  
-The second group consists of specialists who want to share their knowledge. If these professionals offer advisory services (e.g., accounting), they can upgrade their profile to a professional user and provide detailed information about their services. After reading an article, users may be interested in using the services of that advisor.
-
-The platform offers many features, such as creating professional profiles with detailed information, editing posts, commenting, and liking posts and comments.  
-Likes influence the ranking on the homepage, and users can search for articles by categories or keywords.  
-Professional profiles also allow users to leave reviews and ratings (from 1 to 5).
-
-## Features
-
-- **Registration and Login**: Users can register, log in, and log out.
-- **Post Creation**: Logged-in users can create new posts in selected categories.
-- **Commenting**: Users can comment on posts and edit their comments.
-- **User Profiles**: Users can view other users' profiles, including professional profiles.
-- **Professional Profiles**: Users can upgrade their accounts to professional profiles and provide detailed information about their services.
-- **Saving and Liking Posts**: Users can save posts for later viewing and add likes.
-- **Searching**: Users can search for posts by title or content.
-- **Adding Reviews**: Users can leave reviews and ratings for professional profiles.
-
-## Project Structure
-
-- **views.py**: Contains the application’s logic, including handling post creation, comments, user profiles, and other functions.
-- **models.py**: Defines data models such as User, Post, Comment, ProfessionalUser, Like, SavedPost, etc.
-- **urls.py**: Defines URL paths for various views.
-- **templates/finance**: Contains HTML templates for the application, including the homepage, login, registration, post creation, user profiles, etc.
-- **static/finance**: Contains static files such as CSS and JavaScript used in the application.
-
-## Reporting Issues
-If you find any issues or have suggestions for improvement, please report them via [GitHub Issues].
