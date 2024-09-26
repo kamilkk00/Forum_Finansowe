@@ -1,6 +1,6 @@
 # Forum Finansowe
 
-## Link do aplikacji: [forum_finansowe](https://www.biznesiwiedza.pl)
+## Link do aplikacji: [Forum Finansowe](https://www.biznesiwiedza.pl)
 
 Forum finansowe zostało zaprojektowane z myślą o dzieleniu się wiedzą pomiędzy doświadczonymi osobami lub specjalistami w swoich dziedzinach (takich jak doradcy podatkowi, księgowi i inni).
 
